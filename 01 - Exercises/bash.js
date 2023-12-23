@@ -9,6 +9,11 @@ function print(output) {
 
 function bash() {
    process.stdout.write('prompt > ');
+   process.stdin.on('data', (data) => {
+      // console.log(data.toString().trim());
+      let args = data.toString().trim().split(' ');
+      // console.log(args);
+   });
 }
 
 bash();
