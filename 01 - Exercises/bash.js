@@ -7,7 +7,9 @@ function print(output) {
    process.stdout.write('\nprompt > ');
 }
 
-function bash() {}
+function bash() {
+   process.stdout.write('prompt > ');
+}
 
 bash();
 module.exports = {
