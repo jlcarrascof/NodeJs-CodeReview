@@ -14,7 +14,12 @@ function bash() {
       let args = data.toString().trim().split(' ');
       // console.log(args);
       let cmd = args.shift();
-      console.log(cmd);
+      // console.log(cmd);
+
+      if (!commands[cmd]) print(`Command not found:  ${cmd}`)
+      else return commands[cmd](print, args.join(' '));
+    
+
    });
 }
 
