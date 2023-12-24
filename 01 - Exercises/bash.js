@@ -13,6 +13,8 @@ function bash() {
       // console.log(data.toString().trim());
       let args = data.toString().trim().split(' ');
       // console.log(args);
+      let cmd = args.shift();
+      console.log(cmd);
    });
 }
 
