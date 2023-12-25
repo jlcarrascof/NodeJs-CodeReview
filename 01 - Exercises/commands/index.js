@@ -6,7 +6,9 @@ function pwd(print) {
     print(process.cwd());
 }
 
-function date() {}
+function date(print) {
+    print(Date());
+}
 
 function echo() {}
 
@@ -22,4 +24,5 @@ function curl() {}
 
 module.exports = {
     pwd,
+    date,
 };
