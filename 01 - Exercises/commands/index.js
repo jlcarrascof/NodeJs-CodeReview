@@ -43,7 +43,12 @@ function tail(print, args) {
     });
 }
 
-function curl() {}
+function curl(print, args) {
+    utils.request(args, (error, response) => {
+        if (error) throw Error(error);
+        print(response);
+    });
+}
 
 module.exports = {
     pwd,
@@ -53,4 +58,5 @@ module.exports = {
     cat,
     head,
     tail,
+    curl
 };
