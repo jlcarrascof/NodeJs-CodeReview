@@ -10,7 +10,9 @@ function date(print) {
     print(Date());
 }
 
-function echo() {}
+function echo(print, args) {
+    print(args);
+}
 
 function ls() {}
 
@@ -25,4 +27,5 @@ function curl() {}
 module.exports = {
     pwd,
     date,
+    echo,
 };
