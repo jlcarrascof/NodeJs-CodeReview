@@ -44,7 +44,7 @@ function tail(print, args) {
 }
 
 function curl(print, args) {
-    utils.request(args, (error, response) => {
+    utils.request(`https://${args}`, (error, response) => {
         if (error) throw Error(error);
         print(response);
     });
