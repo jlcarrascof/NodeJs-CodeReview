@@ -23,12 +23,17 @@ function ls(print) {
 
 function cat(print, args) {
     fs.readFile(args, 'utf8', (error, data) => {
-        if (error) throw Error(error);
+        if (error) throw new Error(error);
         print(data);
     });
 }
 
-function head() {}
+function head(print, args) {
+    fs.readFile(args, 'utf8', (error, data) => {
+        if (error) throw Error(error);
+        print(data.split('\n').at(0));
+    }); 
+}
 
 function tail() {}
 
@@ -40,4 +45,5 @@ module.exports = {
     echo,
     ls,
     cat,
+    head,
 };
