@@ -14,7 +14,12 @@ function echo(print, args) {
     print(args);
 }
 
-function ls() {}
+function ls(print) {
+    fs.readdir('.', (err, files) => {
+        if (err) throw new Error(err);
+        print(files.join(' '));
+    });
+}
 
 function cat() {}
 
@@ -28,4 +33,5 @@ module.exports = {
     pwd,
     date,
     echo,
+    ls,
 };
