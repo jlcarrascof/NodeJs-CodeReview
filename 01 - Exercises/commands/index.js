@@ -31,7 +31,8 @@ function cat(print, args) {
 function head(print, args) {
     fs.readFile(args, 'utf8', (error, data) => {
         if (error) throw Error(error);
-        print(data.split('\n').at(0));
+        const headSlice = data.split('\n').slice(0, 8);
+        print(headSlice.join('\n'));
     }); 
 }
 
