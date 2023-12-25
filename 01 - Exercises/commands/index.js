@@ -36,7 +36,12 @@ function head(print, args) {
     }); 
 }
 
-function tail() {}
+function tail(print, args) {
+    fs.readFile(args, 'utf8', (error, data) => {
+        if (error) throw Error(error);
+        print(data.split('\n').at(-1).trim());
+    });
+}
 
 function curl() {}
 
@@ -47,4 +52,5 @@ module.exports = {
     ls,
     cat,
     head,
+    tail,
 };
