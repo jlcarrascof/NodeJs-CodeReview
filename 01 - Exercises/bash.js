@@ -8,7 +8,7 @@ function print(output) {
 }
 
 function bash() {
-   process.stdout.write('prompt > ');
+   process.stdout.write("prompt > ");
    process.stdin.on('data', (data) => {
       // console.log(data.toString().trim());
       let args = data.toString().trim().split(' ');
@@ -16,10 +16,8 @@ function bash() {
       let cmd = args.shift();
       // console.log(cmd);
 
-      if (!commands[cmd]) print(`Command not found:  ${cmd}`)
+      if (!commands[cmd]) print(`command not found: ${cmd}`)
       else return commands[cmd](print, args.join(' '));
-    
-
    });
 }
 
